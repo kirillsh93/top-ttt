@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(31, 31, 39);
+  min-height: 100vh;
+  width: 100vw;
+  padding: 6vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6vh;
+
+  font-family: 'Nunito', sans-serif;
+  color: aliceblue;
+
+  position: relative;
+}
+
+/* ---------------------- */
+
+.container {
+  width: 60vh;
+  height: 60vh;
+  padding: 8px;
+  background-color: rgb(55, 55, 73);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 8px;
+
+  transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+.cell {
+  background-color: rgb(31, 31, 39);
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Varela Round', sans-serif;
+
+  /* transition: all 200ms ease; */
+}
+
+.cell:not(.no-hover):hover {
+  background-color: rgb(39, 39, 51);
+  box-shadow: rgba(240, 248, 255, 0.1) 0px 0px 8px;
+}
+
+.cell:not(.no-hover):hover::after {
+  content: var(--player-tag);
+  color: rgb(55, 55, 76);
+  font-size: var(--player-fs);
+}
+
+.cell-X::after {
+  content: 'X';
+  color: aliceblue;
+  font-size: 12vh;
+}
+
+.cell-O::after {
+  content: 'O';
+  color: bisque;
+  font-size: 13vh;
+}
+
+.highlighted::after {
+  color: aqua;
+  text-shadow: rgba(0, 255, 255, 0.2) 0px 0px 40px;
+}
+
+/* ---------------------- */
+
+.game-info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  gap: 2vh;
+
+  width: 100%;
+  text-align: center;
+}
+
+.info-title {
+  color: var(--player-color);
+  font-weight: normal;
+  font-size: 2rem;
+  flex: 1;
+}
+
+.player-X-info {
+  flex: 1;
+  color: aliceblue;
+  font-size: 1.8rem;
+
+  min-width: max-content;
+}
+
+.player-X-score,
+.player-O-score {
+  font-weight: 600;
+}
+
+.player-O-info {
+  color: bisque;
+  flex: 1;
+  font-size: 1.8rem;
+
+  min-width: max-content;
+}
+
+/* ---------------------- */
+
+.actions {
+  display: flex;
+  gap: 16px;
+
+  margin-top: 2vh;
+}
+
+.btn {
+  cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+
+  padding: 0.8em 1.6em;
+  border-radius: 1em;
+  font-weight: 600;
+  border: none;
+
+  min-width: 152px;
+}
+
+.btn i {
+  margin-right: 0.5em;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-fill {
+  background-color: rgb(55, 55, 73);
+}
+
+.btn-fill:hover,
+.btn-fill:active {
+  background-color: rgb(63, 63, 81);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-outline {
+  background: none;
+  box-shadow: inset 0 0 0 2px rgb(55, 55, 73);
+}
+
+.btn-outline:hover,
+.btn-outline:active {
+  background-color: rgb(39, 39, 51);
+}
+
+/* ---------------------- */
+
+.form-container {
+  padding: 2vh;
+  text-align: center;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: normal;
+  color: bisque;
+
+  margin-bottom: 4vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vh;
+}
+
+.form label span {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 100px;
+
+  margin-left: -100px;
+}
+
+.form input {
+  outline: none;
+  width: 320px;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+
+  padding: 0.8em 1.2em;
+  background: none;
+  border: 2px solid rgb(55, 55, 73);
+  border-radius: 1em;
+}
+
+.form input::placeholder {
+  color: rgb(81, 81, 106);
+}
+
+.form input:hover,
+.form input:focus,
+.form input:active {
+  border: 2px solid aqua;
+}
+
+/* ---------------------- */
+
+.hidden {
+  display: none;
+}

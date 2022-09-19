@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+  <title>TOP - Tic-Tac-Toe</title>
+</head>
+
+<body>
+  <div class="game-info">
+    <p class="player-X-info hidden"><span class="player-X-name"></span>: <span class="player-X-score"></span></p>
+    <h2 class="info-title"></h2>
+    <p class="player-O-info hidden"><span class="player-O-name"></span>: <span class="player-O-score"></span></p>
+  </div>
+
+  <div class="form-container">
+    <h2 class="form-title">Who will play?</h2>
+
+    <form class="form" action="#">
+      <label for="player-X-name">
+        <span>Player-X</span>
+        <input id="player-X-name" name="player-X-name" type="text" required onkeydown="return /[a-z]/i.test(event.key)"
+          placeholder="Name">
+      </label>
+      <label for="player-O-name">
+        <span>Player-O</span>
+        <input id="player-O-name" name="player-O-name" type="text" required onkeydown="return /[a-z]/i.test(event.key)"
+          placeholder="Name">
+      </label>
+
+      <button class="btn-start btn-fill btn">Lets Go!</button>
+    </form>
+  </div>
+
+  <div class="container hidden"></div>
+
+  <div class="actions hidden">
+    <button class="btn btn-restart btn-fill"><i class="fa fa-rotate-left"></i><span
+        class="btn-restart-text">Restart</span></button>
+    <button class="btn btn-reset btn-outline">Reset Scores</button>
+  </div>
+</body>
+
+</html>
