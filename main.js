@@ -126,8 +126,8 @@ const GameController = (function () {
     const playerXName = event.target.querySelector('#player-X-name').value;
     const playerOName = event.target.querySelector('#player-O-name').value;
 
-    const playerX = new Player(playerXName, 'X');
-    const playerO = new Player(playerOName, 'O');
+    const playerX = Player(playerXName, 'X');
+    const playerO = Player(playerOName, 'O');
     let currentPlayer = pickRandomPlayer(playerX, playerO);
 
     const board = Gameboard.initBoard();
